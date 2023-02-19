@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nuage de mots</title>
     <link rel="icon" type="image/x-icon" href="./static/images/icons8-rose-16.png">
-    <link rel="stylesheet" href="./static/mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
-  <body>
-    <h1>Nuage de mots</h1>
-    <p><i>faites une liste de mots ou de groupes de mots, puis cliquez sur
-        generer l'image pour obtenir en piece jointe le nuage de point.<br>Pour ajouter un mot, saisissez le, puis soit cliquez sur le bouton correspondant, soit appuyez sur entrée (plus simple et plus pratique).</i></p>
-    <p><i>Les mots doivent etre saisis par ordre d'importance<br>
-      </i></p>
-    <ol>
-      {% for word in words %}
-      <li>{{ word }}</li>
-      {% endfor %}
-    </ol>
-    <form method="post" action="/add" enctype="multipart/form-data"> <label for="word">Mots:</label>
-      <input id="wordid" name="word" type="text" {% if focus %}autofocus{% endif %}> <button type="submit" ,="" id="submitbtn">ajouter
-        mot</button> </form>
-    <form method="post" action="/reset" enctype="multipart/form-data"> <button
-        type="submit" ,="" id="resetbtn" style="width: 103px; margin-left: 273px;">reintialiser</button>
-    </form>
-    <form method="post" action="/submit" enctype="multipart/form-data"> <button
-        type="submit" ,="" id="submitbtn" style="width: 217px; margin-left: 444px; margin-top: -112px; height: 38px;">generer
-        l'image</button> </form>
-
-    <!--<form method="post" action="/logout" enctype="multipart/form-data"> 
-      <button type="submit" ,="" id="submitbtn" style="width: 300px; margin-left: 444px; margin-top: -112px; height: 38px;">logout</button> </form>-->
-    <!--<br><br>
-    <h2>Identification</h2>
-    <hr>
-    <form method="POST" action="/">
-    <label>Utilisateur</label><br />
-    <input type="text" name="user" id="user"><br />
-    <label>Mot de passe</label><br />
-    <input type="password" name="passwd" id="passwd"><br />
-    <input type="submit" name="action" value="login">
-    </form>-->
+  <body style="background-image: url('./static/images/flat.jpg'); background-repeat: no-repeat; background-size: cover;">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h1>Nuage de mots</h1>
+        </div>
+        <div class="col-md-6">
+          <p>
+            L'objectif de cette app est de générer un nuage de mots à partir d'une liste que vous allez écrire.
+            <br>Créez une liste de mots (ou de groupes de mots), puis cliquez sur
+            <i>générer l'image</i> pour obtenir le nuage de point, en piece jointe.
+            Le nom de l'image jointe est choisi aléatoirement.
+            <br>Vous pouvez saisir les mots en appuyant sur entrer.
+            <br>Le poids des mots est décroissant, le premier mot est le plus important et le dernier le moins important.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 ml-4">      
+          <form method="post" action="/add" enctype="multipart/form-data">
+            <label for="word">Ajouter un mot:</label>
+            <input id="wordid" name="word" type="text" {% if focus %}autofocus{% endif %}>
+            <button type="submit" ,=""  id="submitbtn"></button>
+          </form>
+        </div>
+        <div class="col-md-3 ml-4">
+          .
+        </div>
+        <div class="col-md-3 ml-4">
+          <form method="post" action="/submit" enctype="multipart/form-data"> 
+            <button type="submit" ,="" id="submitbtn">générer
+            l'image</button>
+          </form>
+          <form method="post" action="/reset" enctype="multipart/form-data">
+            <button type="submit" ,="" id="resetbtn">réintialiser</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-4">         
+          <ol>
+            {% for word in words %}
+            <li>{{ word }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
