@@ -1,0 +1,20 @@
+server {
+    listen 80;
+    server_name laurentbenaroya.hopto.org;
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        # proxy_set_header Host $host;
+        # proxy_set_header X-Real-IP $remote_addr;
+    }
+#    location / {
+#	include uwsgi_params;
+#	uwsgi_pass unix:///var/run/uwsgi/app/
+#	gmlf/socket;
+#    }   
+# location / {
+#        include proxy_params;
+#        proxy_pass http://127.0.0.1:8080;
+#    }
+}
+

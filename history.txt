@@ -1,0 +1,35 @@
+ 2105  code Pipfile 
+ 2106  conda activate py3.9
+ 2107  python -c "import flask; print(flask.__version__)"
+ 2108  python -c "import wordcloud; print(wordcloud.__version__)"
+ 2109  python -c "import textblob; print(textblob.__version__)"
+ 2110  python -c "import nltk; print(nltk.__version__)"
+ 2111  python -c "import nltk; print(pdflminer.__version__)"
+ 2112  python -c "import pdfminer; print(pdflminer.__version__)"
+ 2113  python -c "import pdfminer; print(pdfminer.__version__)"
+ 2114  python -c "import pandas; print(pandas.__version__)"
+ 2115  python -c "import matplotlib; print(matplotlib.__version__)"
+ 2116  python -c "import werkzeug; print(werkzeug.__version__)"
+ 2117  python --version
+ 2118  python -c "import numpy; print(numpy.__version__)"
+ 2119  python -c "import wordcloud; print(wordcloud.__version__)"
+ 2120  sudo apt install nginx
+ 2121  code /etc/nginx/sites-available/weblist4wordcloud
+ 2122  sudo code /etc/nginx/sites-available/weblist4wordcloud
+ 2123  sudo nano /etc/nginx/sites-available/weblist4wordcloud
+ 2127  sudo ln -s /etc/nginx/sites-available/weblist4wordcloud /etc/nginx/sites-enabled
+ 2128  sudo nginx -t
+ 2129  sudo nano /etc/nginx/nginx.conf
+ 2132  sudo nginx -t
+ 2133  sudo service nginx restart
+ 2134  cat /etc/nginx/sites-available/weblist4wordcloud
+ 2135  python main_basic.py 
+ 2137  sudo apt search uWSGI
+ 2138  sudo apt install uwsgi
+ 2139  ls /var/run/uwsgi/app/
+ 2140  sudo nano /etc/nginx/sites-available/weblist4wordcloud
+ 2141  sudo nginx -t
+ 2142  sudo nano /etc/nginx/sites-available/weblist4wordcloud
+ 2148  pip3 install gunicorn
+ 2157  gunicorn --bind 0.0.0.0:8080 main_basic:app --access-logfile ./log_gunicorn/access.log --workers 2
+ 2158  history > history.txt
