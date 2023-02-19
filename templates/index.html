@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>Nuage de mots</title>
+    <link rel="icon" type="image/x-icon" href="./static/images/icons8-rose-16.png">
+    <link rel="stylesheet" href="./static/mystyle.css">
+  </head>
+  <body>
+    <h1>Nuage de mots</h1>
+    <p><i>faites une liste de mots ou de groupes de mots, puis cliquez sur
+        generer l'image pour obtenir en piece jointe le nuage de point.</i></p>
+    <p><i>Les mots doivent etre par ordre d'importance<br>
+      </i></p>
+    <ol>
+      {% for word in words %}
+      <li>{{ word }}</li>
+      {% endfor %}
+    </ol>
+    <form method="post" action="/add" enctype="multipart/form-data"> <label for="word">Mots:</label>
+      <input id="wordid" name="word" type="text"> <button type="submit" ,="" id="submitbtn">ajouter
+        mot</button> </form>
+    <form method="post" action="/reset" enctype="multipart/form-data"> <button
+        type="submit" ,="" id="resetbtn" style="width: 103px; margin-left: 273px;">reintialiser</button>
+    </form>
+    <form method="post" action="/submit" enctype="multipart/form-data"> <button
+        type="submit" ,="" id="submitbtn" style="width: 217px; margin-left: 444px; margin-top: -112px; height: 38px;">generer
+        l'image</button> </form>
+  </body>
+</html>
