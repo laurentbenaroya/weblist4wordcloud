@@ -33,3 +33,66 @@
  2148  pip3 install gunicorn
  2157  gunicorn --bind 0.0.0.0:8080 main_basic:app --access-logfile ./log_gunicorn/access.log --workers 2
  2158  history > history.txt
+ 2159  code history.txt 
+ 2160  sudo cp /etc/nginx/sites-available/weblist4wordcloud .
+ 2161  cat weblist4wordcloud 
+ 2162  sudo cat /etc/nginx/nginx.conf
+ 2163  less /var/log/nginx/error.log
+ 2164  sudo less /var/log/nginx/error.log
+ 2165  gunicorn --bind 0.0.0.0:8080 main_basic:app --access-logfile ./log_gunicorn/access.log --workers 2
+ 2166  gunicorn --bind 0.0.0.0:8080 main_basic:app --access-logfile ./log_gunicorn/access.log --workers 1
+ 2167  pip install flask-session
+ 2168  gunicorn --bind 0.0.0.0:8080 main_basic:app --access-logfile ./log_gunicorn/access.log --workers 1
+ 2169  cp main_basic.py main_basic_session_log.py
+ 2170  gunicorn --bind 0.0.0.0:8080 main_basic:app --access-logfile ./log_gunicorn/access.log --workers 1
+ 2171  git status
+ 2172  git add main_basic.py templates/index.html
+ 2173  git diff main_basic.py
+ 2174  git reset main_basic.py templates/index.html
+ 2175  git diff main_basic.py
+ 2176  git diff templates/index.html
+ 2177  git add main_basic.py templates/index.html
+ 2178  git commit -m "modifications in order to move to production + commented parts for authentication (work on progress)"
+ 2179  ls
+ 2180  git status
+ 2181  git checkout -b authenticate
+ 2182  git status
+ 2183  git add history.txt 
+ 2184  ls weblist4wordcloud 
+ 2185  cat weblist4wordcloud 
+ 2186  ls
+ 2187  git status
+ 2188  git add weblist4wordcloud 
+ 2189  git reset weblist4wordcloud history.txt
+ 2190  git checkout main
+ 2191  git status
+ 2192  git add history.txt weblist4wordcloud 
+ 2193  git commit -m "files related to production stuff"
+ 2194  git push
+ 2195  ls
+ 2196  git status
+ 2197  gunicorn --bind 0.0.0.0:8080 main_basic:app --access-logfile ./log_gunicorn/access.log --workers 1
+
+ 2198  sudo systemctl stop nginx
+
+ 2199  ls
+ 2200  less weblist4wordcloud 
+ 2201  cat weblist4wordcloud 
+ 2202  python main_basic.py 
+ 2203  ls
+ 2204  cp main_basic.py main_basic_session_cookie_does_not_work_on_safary.py
+
+ 2205  pip install Flask-Caching
+ 2206  apt search redis
+ 2207  sudo apt install redis
+
+ 2208  python main_basic.py 
+
+ 2209  pip install redis
+ 
+ 2210  python main_basic.py 
+ 2211  git status 
+ 2212  git add main_basic.py 
+ 2213  git commit -m "multi-session, replace global varaibles by cache session variables"
+ 2214  git push
+

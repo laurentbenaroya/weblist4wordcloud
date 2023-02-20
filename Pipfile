@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+matplotlib = "==3.7.0"
+pandas = "==1.4.2"
+pdfminer = "*"
+nltk = "==3.7"
+textblob = "*"
+wordcloud = "==1.8.2"
+flask = "==1.1.2"
+flask-session = "==0.4.0"
+Flask-Caching = "==2.0.2"
+redis = "==4.5.1"
+werkzeug = "==2.0.3"
+numpy = "==1.21.5"
+wordcloud = "==1.8.2"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+python_full_version = "3.9.12"
