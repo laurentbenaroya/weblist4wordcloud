@@ -20,7 +20,8 @@ def make_wordcloud(text, map='Blues', alpha=0.9, z_min=3, z_max=10, xfig=6, yfig
         frequency_dist[word] = int(np.floor(delta*pow(((value-1)/(T-1)), alpha)+z_max))
 
     # generate wordcloud
-    wcloud = WordCloud(colormap=map, prefer_horizontal=horizontal_prob, height=yfig*100, width=xfig*100).generate_from_frequencies(frequency_dist)
+    wcloud = WordCloud(colormap=map, prefer_horizontal=horizontal_prob, 
+                       height=yfig*100, width=xfig*100).generate_from_frequencies(frequency_dist)
 
     return wcloud
 
