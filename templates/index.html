@@ -21,14 +21,14 @@
             <i>générer l'image</i> pour obtenir le nuage de point, en piece jointe.
             Le nom de l'image jointe est choisi aléatoirement.
             <br>Vous pouvez saisir les mots et appuyer sur entrer après chaque mot.
-            <br>Le poids des mots est décroissant, le premier mot est le plus important et le dernier le moins important.
+            <br>Le poids des mots est décroissant, sur l'image, le premier mot sera le plus grand et le dernier sera le plus petit.
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-2 ml-4">      
           <form method="post" action="/add" enctype="multipart/form-data">
-            <label for="word">Ajouter un mot:</label>
+            <label for="word"><h4>ajouter un mot:</h4></label>
             <input id="wordid" name="word" type="text" {% if focus %}autofocus{% endif %}>
             <button type="submit" ,=""  id="submitbtn"></button>
           </form>
@@ -53,6 +53,13 @@
             <li>{{ word }}</li>
             {% endfor %}
           </ol>
+        </div>
+        <div class="col-md-6 ml-4">
+          <h4>télécharger un fichier texte (.txt)</h4>
+          <form method="post" action="/upload" enctype=multipart/form-data>
+            <input type="file" name="file">
+            <button type=submit value="">upload</button>
+          </form>
         </div>
       </div>
     </div>
