@@ -2,7 +2,10 @@ FROM python:3.7.3
 
 COPY . /app
 
-RUN pip install matplotlib pandas pdfminer nltk textblob wordcloud flask flask-session Flask-Caching redis werkzeug numpy wordcloud
+RUN pip install --upgrade pip
+
+RUN pip install -r requirements.txt
+# RUN pip install matplotlib wordcloud flask Flask-Caching redis werkzeug numpy gunicorn
 
 WORKDIR /app
 
