@@ -1,5 +1,8 @@
 # Générer des nuages de mots à partir d'une liste qui est entrée par l'utilisateur
 
+## commentaire
+Le README est en cours de rédaction, le code est opérationnel  
+
 ## docker 
 $ docker build -t myapp .  
 $ docker run -p 8080:8080 -d myapp  
