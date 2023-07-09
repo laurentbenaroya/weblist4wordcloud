@@ -9,7 +9,11 @@ COPY requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN pip install Flask-Caching==2.0.2
+RUN pip install --index-url=https://www.piwheels.org/simple --no-cache-dir -r requirements.txt
+
+RUN apt update
+RUN apt -y install libatlas-base-dev
 
 EXPOSE 8080
 
