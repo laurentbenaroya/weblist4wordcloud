@@ -3,6 +3,8 @@
 ## commentaire
 Le README est en cours de rédaction, le code est opérationnel  
 
+### note importante
+il faut créer un fichier `.env` contenant une ligne avec `SECRET_KEY=somestring` (ça n'est pas critique parce qu'il ne contient pas une clef d'une API ou un mot de passe, mais il faut mettre une chaîne de caractères)
 ## docker 
 $ docker build -t myapp .  
 $ docker run -p 8080:8080 -d myapp  
